@@ -1,24 +1,44 @@
-## README
+Admin - Rachael
+- Email
+- Name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Activity - Powerpoint
+- Name
+- Needed slots
 
-Things you may want to cover:
+User - Melissa
+- Email
+- Name
+- Activity id
+- Slot id
 
-* Ruby version
+Slot - January 1
+- Date
+- User id
+- Activity id
 
-* System dependencies
+# MVP Goals
+See all of your slots
+1 click to ask for switch
+1 click to accept switch via email
 
-* Configuration
+# Reach Goals
+Google Calendar integration
+Create calendar invite
 
-* Database creation
+###################
+#
+#    Sunday, March 1
+#
+#  Nursery
+#
+#  Melissa Faulkner  Request a sub
+#  Vance Faulkner
+#
+##################
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Request a sub
+1. Find next 4 Sundays you are not volunteering
+2. Find users who are part of that activity and free that sunday
+3. Find their next activity slot during which the user is free
+4. Send email to those users with "Powerpoint on March 8?" subject and proposed sub
