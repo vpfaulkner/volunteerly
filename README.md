@@ -9,13 +9,14 @@ Activity - Powerpoint
 User - Melissa
 - Email
 - Name
-- Activity id
-- Slot id
 
-Slot - January 1
-- Date
-- User id
+Commitment - Melissa commits to Powerpoint
 - Activity id
+- User id
+
+Slot - Melissa is doing Powerpoint on January 1
+- Date
+- Commitment Id
 
 # MVP Goals
 See all of your slots

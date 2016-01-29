@@ -4,7 +4,7 @@ ruby '2.2.2'
 
 gem 'rails', github: "rails/rails"
 
-gem 'devise'
+gem 'devise', git: 'git@github.com:plataformatec/devise.git'
 gem 'font-awesome-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
