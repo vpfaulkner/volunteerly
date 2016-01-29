@@ -36,7 +36,7 @@ group :test do
 end
 
 group :development do
-  gem 'web-console', github: 'rails/web-console'
+  # gem 'web-console', github: 'rails/web-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
