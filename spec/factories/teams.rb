@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :activity do
+  factory :team do
     name { Faker::Name.name  }
     needed_slots { rand(10) }
   end

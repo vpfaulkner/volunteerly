@@ -2,7 +2,7 @@ Admin
 - Email
 - Name
 
-Activity
+Team
 - Name
 - Needed slots
 
@@ -10,13 +10,13 @@ User
 - Email
 - Name
 
-Commitment
-- Activity id
+Membership
+- Team id
 - User id
 
 Slot
 - Date
-- Commitment Id
+- Membership Id
 
 # MVP
 See all of your slots

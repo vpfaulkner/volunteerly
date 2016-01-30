@@ -11,30 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129025422) do
+ActiveRecord::Schema.define(version: 20160130023003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "activities", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "needed_slots"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "commitments", force: :cascade do |t|
-    t.integer  "activity_id"
+  create_table "memberships", force: :cascade do |t|
+    t.integer  "team_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "slots", force: :cascade do |t|
     t.date     "date"
-    t.integer  "commitment_id"
+    t.integer  "membership_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "needed_slots"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

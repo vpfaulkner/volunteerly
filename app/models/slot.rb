@@ -1,7 +1,7 @@
 class Slot < ApplicationRecord
-  belongs_to :commitment
-  has_one :user, through: :commitment
-  has_one :activity, through: :commitment
+  belongs_to :membership
+  has_one :user, through: :membership
+  has_one :team, through: :membership
 
   def request_sub
     # 1. Find next 4 Sundays you are not volunteering starting from today

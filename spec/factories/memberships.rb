@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :commitment do
+  factory :membership do
     user
-    activity
+    team
   end
 end
