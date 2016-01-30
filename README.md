@@ -20,7 +20,7 @@ Assignment
 
 # MVP
 See all of your assignments
-1 click to ask for switch
+1 click to ask for sub
 1 click to accept switch via email
 
 # Reach
