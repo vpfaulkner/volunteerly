@@ -4,7 +4,7 @@ Admin
 
 Team
 - Name
-- Needed slots
+- Needed assignments
 
 User
 - Email
@@ -14,12 +14,12 @@ Membership
 - Team id
 - User id
 
-Slot
+Assignment
 - Date
 - Membership Id
 
 # MVP
-See all of your slots
+See all of your assignments
 1 click to ask for switch
 1 click to accept switch via email
 

@@ -1,0 +1,13 @@
+require 'rails_helper'
+
+describe Assignment do
+  describe '#request_sub' do
+    it 'finds open assignment' do
+      original_assignment = create(:assignment, date: Date.new(2016, 01, 31))
+      team = original_assignment.team
+      other_membership = create(:membership, team: team)
+      other_assignment = create(:assignment, membership: other_membership, date: Date.new(2016, 02, 07))
+      expect(original_assignment.request_sub).to eq [other_assignment]
+    end
+  end
+end

@@ -1,5 +1,5 @@
 class Membership < ApplicationRecord
   belongs_to :user
   belongs_to :team
-  has_many :slots
+  has_many :assignments
 end
