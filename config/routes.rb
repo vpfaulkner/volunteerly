@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :admins
   root 'assignments#index'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
-
+  resources :teams do
+    resources :memberships
+  end
   resources :assignments
+
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
+  devise_for :admins
 
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'

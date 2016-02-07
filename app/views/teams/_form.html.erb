@@ -1,0 +1,6 @@
+<%= "Errors: #{@team.errors.full_messages.to_sentence}" if @team.errors %></br>
+<%= form_for @team do |form| %>
+  Name: <%= form.text_field :name %></br>
+  Needed Assignments <%= form.text_field :needed_assignments %></br>
+  <%= form.submit %>
+<% end -%>

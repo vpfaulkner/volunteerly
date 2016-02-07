@@ -1,0 +1,23 @@
+<h1>Teams</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Needed Assignments</th>
+    </tr>
+  </thead>
+
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= team.name %></td>
+      <td><%= team.needed_assignments %></td>
+      <td>
+        <%= link_to 'Edit', edit_team_path(team.id) %>
+        <%= link_to 'Delete', team, method: 'delete' %>
+      </td>
+    </tr>
+  <% end -%>
+</table>
+
+<p><%= link_to 'New Team', new_team_path %></p>
