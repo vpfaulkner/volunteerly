@@ -1,1 +1,23 @@
-hello
+<h1>Assignments</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Assignment</th>
+    </tr>
+  </thead>
+
+  <% @sundays.each do |sunday| %>
+    <tr>
+      <td><%= sunday %></td>
+      <td><%= assignment.team.name %></td>
+      <td>
+        <%= link_to 'Edit', edit_assignment_path(assignment.id) %>
+        <%= link_to 'Delete', assignment, method: 'delete' %>
+      </td>
+    </tr>
+  <% end -%>
+</table>
+
+<p><%= link_to 'New Assignment', new_assignment_path %></p>

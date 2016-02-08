@@ -18,6 +18,12 @@
       Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% elsif admin_signed_in? %>
+      <%= link_to 'Assignments', root_path, :class => 'navbar-link' %> |
+      <%= link_to 'Teams', teams_path, :class => 'navbar-link' %> |
+      <%= link_to 'Users', user_index_path, :class => 'navbar-link' %> |
+      <%= link_to 'Edit account', edit_admin_password_path, :class => 'navbar-link' %>
+      <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link' %>
     <% else %>
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
       <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>

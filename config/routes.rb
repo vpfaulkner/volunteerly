@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :memberships
   end
   resources :assignments
+  resources :user, controller: 'users'
 
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
   devise_for :admins
