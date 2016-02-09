@@ -8,14 +8,10 @@
     </tr>
   </thead>
 
-  <% @sundays.each do |sunday| %>
+  <% @assignments_by_sunday.each do |sunday, assignment| %>
     <tr>
       <td><%= sunday %></td>
-      <td><%= assignment.team.name %></td>
-      <td>
-        <%= link_to 'Edit', edit_assignment_path(assignment.id) %>
-        <%= link_to 'Delete', assignment, method: 'delete' %>
-      </td>
+      <td><%= assignment.last.try(:team).try(:name) %></td>
     </tr>
   <% end -%>
 </table>

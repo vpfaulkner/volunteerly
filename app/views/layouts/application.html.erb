@@ -6,29 +6,20 @@
     <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% elsif admin_signed_in? %>
-      <%= link_to 'Assignments', root_path, :class => 'navbar-link' %> |
-      <%= link_to 'Teams', teams_path, :class => 'navbar-link' %> |
-      <%= link_to 'Users', user_index_path, :class => 'navbar-link' %> |
-      <%= link_to 'Edit account', edit_admin_password_path, :class => 'navbar-link' %>
-      <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link' %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-    <%= yield %>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <%= render 'shared/navbar' %>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

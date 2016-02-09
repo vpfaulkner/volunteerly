@@ -1,0 +1,26 @@
+<!-- Always shows a header, even in smaller screens. -->
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title">Volunteerly</span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer">
+    </div>
+    <!-- Navigation. We hide it in small screens. -->
+    <nav class="mdl-navigation mdl-layout--large-screen-only">
+    <% if user_signed_in? %>
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'mdl-navigation__link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'mdl-navigation__link'  %>
+    <% elsif admin_signed_in? %>
+      <%= link_to 'Assignments', root_path, :class => 'mdl-navigation__link' %> |
+      <%= link_to 'Teams', teams_path, :class => 'mdl-navigation__link' %> |
+      <%= link_to 'Users', user_index_path, :class => 'mdl-navigation__link' %> |
+      <%= link_to 'Edit account', edit_admin_password_path, :class => 'mdl-navigation__link' %>
+      <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'mdl-navigation__link' %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
+      <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
+    <% end %>
+    </nav>
+  </div>
+</header>

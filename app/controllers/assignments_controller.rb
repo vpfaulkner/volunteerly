@@ -5,8 +5,8 @@ class AssignmentsController < ApplicationController
                       .assignments
                       .where(date: sundays)
                       .all
-    @assignments = sundays.inject({}) do |assignments_hash, sunday|
-      assignments_hash[sunday] = all_assignment.select { |a| a.date == sunday }
+    @assignments_by_sunday = sundays.each_with_object({}) do |sunday, assignments_hash|
+      assignments_hash[sunday] = all_assignments.select { |a| a.date == sunday }
     end
   end
 end
