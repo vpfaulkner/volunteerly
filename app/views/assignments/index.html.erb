@@ -1,19 +1,20 @@
-<h1>Assignments</h1>
-
-<table border="1">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Assignment</th>
-    </tr>
-  </thead>
-
-  <% @assignments_by_sunday.each do |sunday, assignment| %>
-    <tr>
-      <td><%= sunday %></td>
-      <td><%= assignment.last.try(:team).try(:name) %></td>
-    </tr>
+<div class='page-title'>
+  <h1>Assignments</h1>
+</div>
+<div id='assignment-cards'>
+  <% @assignments_by_sunday.each do |sunday, assignments| %>
+    <div class="demo-card-square mdl-card mdl-shadow--3dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h4>
+          <%= sunday.strftime('%b %d, %Y') %>
+        </h4>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <% assignments.each do |assignment| %>
+          <h5><%= assignment.team.name %></h5>
+        <% end %>
+      </div>
+    </div>
   <% end -%>
-</table>
-
+</div>
 <p><%= link_to 'New Assignment', new_assignment_path %></p>

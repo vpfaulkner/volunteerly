@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :teams do
     resources :memberships
   end
-  resources :assignments
+  resources :assignments do
+    get 'subs', to: 'assignments#subs'
+    post 'subs', to: 'assignements#request_sub'
+  end
   resources :user, controller: 'users'
 
   devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }

@@ -9,4 +9,12 @@ class AssignmentsController < ApplicationController
       assignments_hash[sunday] = all_assignments.select { |a| a.date == sunday }
     end
   end
+
+  def subs
+    @subs = Assignment.find(params[:id]).potential_subs
+  end
+
+  def request_sub
+    # Send email
+  end
 end
